@@ -6,10 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint",
-    "generate:types": "contentful-typescript-codegen --output src/@types/contentful.d.ts"
+    "lint": "next lint"
   },
   "dependencies": {
+    "@contentful/rich-text-react-renderer": "^15.12.1",
     "next": "12.2.2",
     "react": "18.2.0",
     "react-dom": "18.2.0",
@@ -24,7 +24,6 @@
     "@typescript-eslint/eslint-plugin": "^5.30.7",
     "contentful": "^9.1.33",
     "contentful-management": "^10.9.1",
-    "contentful-typescript-codegen": "^3.2.3",
     "dotenv": "^16.0.1",
     "eslint": "8.20.0",
     "eslint-config-next": "12.2.2",

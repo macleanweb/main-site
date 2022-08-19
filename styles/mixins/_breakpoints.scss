@@ -1,0 +1,24 @@
+$screenSizes: (
+  'small': (
+    max-width: 719px,
+  ),
+  'medium': (
+    min-width: 720px,
+  ),
+  'large': (
+    min-width: 1024px,
+  ),
+  'x-large': (
+    min-width: 1280px,
+  ),
+);
+
+@mixin breakpoint($breakpoint) {
+  @if map-has-key($screenSizes, $breakpoint) {
+    @media #{inspect(map-get($screenSizes, $breakpoint))} {
+      @content;
+    }
+  } @else {
+    @error "No breakpoint value for `#{$breakpoint}`.";
+  }
+}

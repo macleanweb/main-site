@@ -50,3 +50,26 @@ h3,
     font-size: 36px;
   }
 }
+
+h4,
+.h4 {
+  font-size: 24px;
+
+  @include breakpoint(medium) {
+    font-size: 30px;
+  }
+}
+
+h5,
+.h5 {
+  font-size: 20px;
+
+  @include breakpoint(medium) {
+    font-size: 24px;
+  }
+}
+
+h6,
+.h6 {
+  font-size: 18px;
+}

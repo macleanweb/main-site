@@ -10,7 +10,6 @@ interface Props {
 
 const Home: NextPage<Props> = ({ homePageData }) => {
   const seoMeta = homePageData?.seoMeta || null
-  console.log(seoMeta)
   return (
     <>
       <Head>

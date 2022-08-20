@@ -23,6 +23,5 @@ export async function makeContentfulQuery(query) {
   }
 
   const { data } = await result.json()
-  console.log(data)
   return data
 }

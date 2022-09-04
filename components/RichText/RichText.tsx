@@ -1,13 +1,16 @@
-import { BLOCKS, EntryLinkBlock } from '@contentful/rich-text-types'
-import { documentToReactComponents } from '@contentful/rich-text-react-renderer'
-import { HomepageMainContent } from '../../src/schema'
+import { BLOCKS } from '@contentful/rich-text-types'
+import {
+  documentToReactComponents,
+  Options,
+} from '@contentful/rich-text-react-renderer'
+import { HomepageMainContent, HomepageMainContentLinks } from '../../src/schema'
 import styles from './RichText.module.scss'
 
 interface Props {
   richTextResponse: HomepageMainContent
 }
 
-function renderOptions(links) {
+const renderOptions = (links: HomepageMainContentLinks): Options => {
   // create an entry map
   const entryMap = new Map()
   // loop through the block linked entries and add them to the map
@@ -17,7 +20,7 @@ function renderOptions(links) {
 
   return {
     renderNode: {
-      [BLOCKS.EMBEDDED_ENTRY]: (node: EntryLinkBlock) => {
+      [BLOCKS.EMBEDDED_ENTRY]: (node) => {
         // find the entry in the entryMap by ID
         const entry = entryMap.get(node.data.target.sys.id)
         // render the entries as needed
@@ -34,6 +37,7 @@ function renderOptions(links) {
             </div>
           )
         }
+        return null
       },
     },
   }

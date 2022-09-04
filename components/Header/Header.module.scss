@@ -6,6 +6,7 @@
   white-space: nowrap;
   color: $mw-pink;
   font-size: 18px;
+  margin-top: 0;
 
   @include breakpoint(medium) {
     display: inline-block;

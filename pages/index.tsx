@@ -27,7 +27,7 @@ const Home: NextPage<Props> = ({ homePageData }) => {
 export async function getStaticProps() {
   const homepageQuery = `
     query {
-      homepageCollection {
+      homepageCollection(limit: 2) {
         items {
           seoMeta {
             pageTitle
@@ -39,6 +39,23 @@ export async function getStaticProps() {
           title
           mainContent {
             json
+            links {
+              entries {
+                block {
+                  sys {
+                    id
+                  }
+                  __typename
+                  ... on CareerHighlight {
+                    title
+                    subHeader
+                    context {
+                      json
+                    }
+                  }
+                }
+              }
+            }
           }
           image {
             url

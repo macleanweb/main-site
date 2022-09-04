@@ -2,7 +2,7 @@ const SPACE_ID = process.env.CONTENTFUL_SPACE_ID
 const ENVIRONMENT = process.env.CONTENTFUL_ENVIRONMENT
 const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN
 
-export async function makeContentfulQuery(query) {
+export async function makeContentfulQuery(query: string) {
   const result = await fetch(
     `https://graphql.contentful.com/content/v1/spaces/${SPACE_ID}/environments/${ENVIRONMENT}`,
     {

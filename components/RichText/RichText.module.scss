@@ -1,0 +1,25 @@
+.career-highlight {
+  margin-bottom: 24px;
+
+  h4 {
+    margin-bottom: 0;
+  }
+
+  span {
+    color: $mw-white;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 14px;
+  }
+
+  .description {
+    margin: 0.5em 0;
+  }
+
+  ul {
+    padding: 0 16px;
+    li {
+      color: $mw-pink;
+    }
+  }
+}

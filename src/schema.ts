@@ -219,6 +219,126 @@ export enum AssetOrder {
   WidthDesc = 'width_DESC'
 }
 
+/** [See type definition](https://app.contentful.com/spaces/rpt34ypq0wi3/content_types/careerHighlight) */
+export type CareerHighlight = Entry & {
+  __typename?: 'CareerHighlight';
+  contentfulMetadata: ContentfulMetadata;
+  context?: Maybe<CareerHighlightContext>;
+  linkedFrom?: Maybe<CareerHighlightLinkingCollections>;
+  subHeader?: Maybe<Scalars['String']>;
+  sys: Sys;
+  title?: Maybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/rpt34ypq0wi3/content_types/careerHighlight) */
+export type CareerHighlightContextArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/rpt34ypq0wi3/content_types/careerHighlight) */
+export type CareerHighlightLinkedFromArgs = {
+  allowedLocales?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/rpt34ypq0wi3/content_types/careerHighlight) */
+export type CareerHighlightSubHeaderArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+
+/** [See type definition](https://app.contentful.com/spaces/rpt34ypq0wi3/content_types/careerHighlight) */
+export type CareerHighlightTitleArgs = {
+  locale?: InputMaybe<Scalars['String']>;
+};
+
+export type CareerHighlightCollection = {
+  __typename?: 'CareerHighlightCollection';
+  items: Array<Maybe<CareerHighlight>>;
+  limit: Scalars['Int'];
+  skip: Scalars['Int'];
+  total: Scalars['Int'];
+};
+
+export type CareerHighlightContext = {
+  __typename?: 'CareerHighlightContext';
+  json: Scalars['JSON'];
+  links: CareerHighlightContextLinks;
+};
+
+export type CareerHighlightContextAssets = {
+  __typename?: 'CareerHighlightContextAssets';
+  block: Array<Maybe<Asset>>;
+  hyperlink: Array<Maybe<Asset>>;
+};
+
+export type CareerHighlightContextEntries = {
+  __typename?: 'CareerHighlightContextEntries';
+  block: Array<Maybe<Entry>>;
+  hyperlink: Array<Maybe<Entry>>;
+  inline: Array<Maybe<Entry>>;
+};
+
+export type CareerHighlightContextLinks = {
+  __typename?: 'CareerHighlightContextLinks';
+  assets: CareerHighlightContextAssets;
+  entries: CareerHighlightContextEntries;
+};
+
+export type CareerHighlightFilter = {
+  AND?: InputMaybe<Array<InputMaybe<CareerHighlightFilter>>>;
+  OR?: InputMaybe<Array<InputMaybe<CareerHighlightFilter>>>;
+  contentfulMetadata?: InputMaybe<ContentfulMetadataFilter>;
+  context_contains?: InputMaybe<Scalars['String']>;
+  context_exists?: InputMaybe<Scalars['Boolean']>;
+  context_not_contains?: InputMaybe<Scalars['String']>;
+  subHeader?: InputMaybe<Scalars['String']>;
+  subHeader_contains?: InputMaybe<Scalars['String']>;
+  subHeader_exists?: InputMaybe<Scalars['Boolean']>;
+  subHeader_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  subHeader_not?: InputMaybe<Scalars['String']>;
+  subHeader_not_contains?: InputMaybe<Scalars['String']>;
+  subHeader_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  sys?: InputMaybe<SysFilter>;
+  title?: InputMaybe<Scalars['String']>;
+  title_contains?: InputMaybe<Scalars['String']>;
+  title_exists?: InputMaybe<Scalars['Boolean']>;
+  title_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+  title_not?: InputMaybe<Scalars['String']>;
+  title_not_contains?: InputMaybe<Scalars['String']>;
+  title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']>>>;
+};
+
+export type CareerHighlightLinkingCollections = {
+  __typename?: 'CareerHighlightLinkingCollections';
+  entryCollection?: Maybe<EntryCollection>;
+};
+
+
+export type CareerHighlightLinkingCollectionsEntryCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+};
+
+export enum CareerHighlightOrder {
+  SubHeaderAsc = 'subHeader_ASC',
+  SubHeaderDesc = 'subHeader_DESC',
+  SysFirstPublishedAtAsc = 'sys_firstPublishedAt_ASC',
+  SysFirstPublishedAtDesc = 'sys_firstPublishedAt_DESC',
+  SysIdAsc = 'sys_id_ASC',
+  SysIdDesc = 'sys_id_DESC',
+  SysPublishedAtAsc = 'sys_publishedAt_ASC',
+  SysPublishedAtDesc = 'sys_publishedAt_DESC',
+  SysPublishedVersionAsc = 'sys_publishedVersion_ASC',
+  SysPublishedVersionDesc = 'sys_publishedVersion_DESC',
+  TitleAsc = 'title_ASC',
+  TitleDesc = 'title_DESC'
+}
+
 export type ContentfulMetadata = {
   __typename?: 'ContentfulMetadata';
   tags: Array<Maybe<ContentfulTag>>;
@@ -498,6 +618,8 @@ export type Query = {
   __typename?: 'Query';
   asset?: Maybe<Asset>;
   assetCollection?: Maybe<AssetCollection>;
+  careerHighlight?: Maybe<CareerHighlight>;
+  careerHighlightCollection?: Maybe<CareerHighlightCollection>;
   entryCollection?: Maybe<EntryCollection>;
   homepage?: Maybe<Homepage>;
   homepageCollection?: Maybe<HomepageCollection>;
@@ -522,6 +644,23 @@ export type QueryAssetCollectionArgs = {
   preview?: InputMaybe<Scalars['Boolean']>;
   skip?: InputMaybe<Scalars['Int']>;
   where?: InputMaybe<AssetFilter>;
+};
+
+
+export type QueryCareerHighlightArgs = {
+  id: Scalars['String'];
+  locale?: InputMaybe<Scalars['String']>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+};
+
+
+export type QueryCareerHighlightCollectionArgs = {
+  limit?: InputMaybe<Scalars['Int']>;
+  locale?: InputMaybe<Scalars['String']>;
+  order?: InputMaybe<Array<InputMaybe<CareerHighlightOrder>>>;
+  preview?: InputMaybe<Scalars['Boolean']>;
+  skip?: InputMaybe<Scalars['Int']>;
+  where?: InputMaybe<CareerHighlightFilter>;
 };
 
 

@@ -1,6 +1,11 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const path = require('path')
 
 const nextConfig = {
+  i18n: {
+    locales: ['en'],
+    defaultLocale: 'en',
+  },
   reactStrictMode: true,
   swcMinify: true,
   sassOptions: {
